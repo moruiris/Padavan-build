@@ -4,5 +4,6 @@
 
 (重新编译点击 Unstar 星星按钮后再点击 Star 星星按钮即可重新编译)
 
-根据 chongshengB / Padavan-build 进行修改
+根据 [chongshengB / Padavan-build](https://github.com/chongshengB/Padavan-build) 进行修改
+
 编译源码：https://github.com/hanwckf/rt-n56u
