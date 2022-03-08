@@ -1,6 +1,6 @@
 #################################################################################################
-# 修改 TNAME: R3P 中的R2100为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-# 小米R3P型号为R3P
+# 修改 TNAME: MI-R3P 中的MI-R3P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
+# 小米R3P型号为MI-R3P
 #################################################################################################
 name: hanwckf-R3P
 
@@ -30,10 +30,10 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo apt-get update
-        sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
-      	fakeroot kmod cpio git python3-docutils gettext automake autopoint \
-	      texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
-	      libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
+	sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
+	        fakeroot kmod cpio git python3-docutils gettext automake autopoint \
+		texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
+		libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
     - name: Clone source code
       run: |
         git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u
@@ -42,7 +42,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: R3P
+        TNAME: MI-R3P
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
