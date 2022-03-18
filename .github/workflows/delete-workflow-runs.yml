@@ -1,0 +1,24 @@
+name: delete-workflow-runs
+on: 
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
+  #  branches: 
+  #    - master
+#  schedule:
+#    - cron: 0 8 * * 5
+  watch:
+    types: [started]
+    
+jobs:
+  del_runs:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: 删除工作流
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 9
